@@ -103,6 +103,20 @@ module.exports = {
     },
 
     /**
+     * return revision number of Chromium 76.
+     */
+    async getTargetRevisionNumber() {
+        const platform = process.platform;
+        if (platform === 'linux') {
+            return '665006';
+        } else if (platform === 'darwin') {
+            return '665002';
+        } else {
+            throw new Error('Unsupported platform');
+        }
+    },
+
+    /**
      * Computes necessary configuration options for use with *got*. For the time being this only considers proxy settings.
      * @param url the target URL
      * @returns {Object}

@@ -70,7 +70,7 @@ async function install() {
         //console.info('Step 1. Retrieving Chromium latest revision number');
         //const revision = await utils.getLatestRevisionNumber();
         console.info('Step 1. Chromium revision is 76.');
-        const revision = '76.0.3809.132';
+        const revision = '665002';
 
         console.info('Step 2. Downloading Chromium (this might take a while)');
         const tmpPath = await downloadChromiumRevision(revision);

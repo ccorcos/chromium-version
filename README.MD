@@ -16,7 +16,7 @@ If you need to use older versions of Node.js try `node-chromium 1.x.x` releases.
 Depending on your needs, you can install module into **devDependencies** (`--save-dev`) or production **dependencies** (`--save`)
 
 ```
-npm install --save chromium
+npm install --save github:taku-o/node-chromium#feature/76
 ```
 
 During the installation process **node-chromium** will find the latest suitable build for your platform, download it and extract into libraries folder. As soon as installation is finished, you are ready to use Chromium in your project:
@@ -45,7 +45,8 @@ It's extremely easy to use **node-chromium** with **selenium-webdriver** to perf
 First, install all dependencies
 
 ```
-npm install --save chromium chromedriver selenium-webdriver
+npm install --save github:taku-o/node-chromium#feature/76
+npm install --save chromedriver selenium-webdriver
 ```
 
 After the installation is finished, create simple script that opens Google Search home page and takes it's screenshot in headless mode.

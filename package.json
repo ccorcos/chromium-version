@@ -1,8 +1,11 @@
 {
-  "name": "chromium",
-  "version": "2.1.1",
-  "description": "Chromium binaries for Node.js projects",
-  "repository": "dtolstyi/node-chromium",
+  "name": "@taku-o/chromium",
+  "version": "3.0.0",
+  "description": "Fork of dtolstyi/node-chromium, install selected version of Chromium.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/taku-o/node-chromium.git"
+  },
   "main": "index.js",
   "os": [
     "darwin",
@@ -18,14 +21,15 @@
     "config.js",
     "index.js",
     "install.js",
-    "utils.js"
+    "utils.js",
+    ".npmrc"
   ],
   "keywords": [
     "chromium",
     "chrome",
     "browser"
   ],
-  "author": "Dmytro TOLSTYI <dmytro.tolstyi@gmail.com>",
+  "author": "taku-o <mail@nanasi.jp> (https://nanasi.jp/)",
   "license": "MIT",
   "xo": {
     "space": 4,

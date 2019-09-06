@@ -16,13 +16,13 @@ If you need to use older versions of Node.js try `node-chromium 1.x.x` releases.
 Depending on your needs, you can install module into **devDependencies** (`--save-dev`) or production **dependencies** (`--save`)
 
 ```
-npm install --save github:taku-o/node-chromium#feature/76
+CHROMIUM_VERSION=76 npm install --save @taku-o/chromium
 ```
 
 During the installation process **node-chromium** will find the latest suitable build for your platform, download it and extract into libraries folder. As soon as installation is finished, you are ready to use Chromium in your project:
 
 ```js
-const chromium = require('chromium');
+const chromium = require('@taku-o/chromium');
 const {execFile} = require('child_process');
 
 execFile(chromium.path, ['https://google.com'], err => {
@@ -45,7 +45,7 @@ It's extremely easy to use **node-chromium** with **selenium-webdriver** to perf
 First, install all dependencies
 
 ```
-npm install --save github:taku-o/node-chromium#feature/76
+CHROMIUM_VERSION=76 npm install --save @taku-o/chromium
 npm install --save chromedriver selenium-webdriver
 ```
 
@@ -55,7 +55,7 @@ After the installation is finished, create simple script that opens Google Searc
 const fs = require('fs');
 const webdriver = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
-const chromium = require('chromium');
+const chromium = require('@taku-o/chromium');
 require('chromedriver');
 
 async function start() {

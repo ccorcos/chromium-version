@@ -1,5 +1,5 @@
 # node-chromium [![Build Status](https://travis-ci.org/dtolstyi/node-chromium.svg?branch=master)](https://travis-ci.org/dtolstyi/node-chromium) [![XO code style](https://img.shields.io/badge/code_style-XO-blue.svg)](https://github.com/sindresorhus/xo) [![npm version](https://badge.fury.io/js/chromium.svg)](https://badge.fury.io/js/chromium) [![Platforms](https://img.shields.io/badge/platforms-Win/Linux/Mac-lightgrey.svg)](https://github.com/dtolstyi/node-chromium)
-> Chromium binaries for your NodeJS project
+> Fork of node-chromium, install selected version of Chromium.
 
 **node-chromium** allows you to easily add [Chromium](https://www.chromium.org/) binaries to your project and use it for automation, testing, web scraping or just for fun.
 
@@ -19,7 +19,12 @@ Depending on your needs, you can install module into **devDependencies** (`--sav
 npm install --save @taku-o/chromium
 ```
 
-During the installation process **node-chromium** will find the latest suitable build for your platform, download it and extract into libraries folder. As soon as installation is finished, you are ready to use Chromium in your project:
+if you want to select installing Chromium version,
+use CHROMIUM_VERSION environment variable.
+
+```
+CHROMIUM_VERSION=76 npm install --save @taku-o/chromium
+```
 
 ```js
 const chromium = require('@taku-o/chromium');
@@ -88,9 +93,9 @@ start();
 ```
 
 ## version mapping
-| package version | chromium version | supported       |
-| --------------- | ---------------- | --------------- |
-| 3.0.1           | 76               | Mac, Linux(x64) |
+| package version | default Chromium version | supported                     |
+| --------------- | ------------------------ | ----------------------------- |
+| 3.0.5           | 76                       | Mac, Linux(x64), Win32, Win64 |
 
 ## 
 

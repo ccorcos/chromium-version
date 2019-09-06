@@ -1,6 +1,6 @@
 {
   "name": "@taku-o/chromium",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "versions": {
       "chromium": "76"
   },
@@ -28,7 +28,7 @@
     "index.js",
     "install.js",
     "utils.js",
-    ".npmrc"
+    "versions.js"
   ],
   "keywords": [
     "chromium",

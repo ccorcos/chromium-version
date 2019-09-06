@@ -6,6 +6,7 @@ const got = require('got');
 const tunnel = require('tunnel');
 
 const config = require('./config');
+const versions = require('./versions');
 
 const CDN_URL = 'https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/';
 
@@ -77,6 +78,8 @@ module.exports = {
             url += 'Linux';
             if (process.arch === 'x64') {
                 url += '_x64';
+            } else {
+                throw new Error('Unsupported platform');
             }
         } else if (platform === 'win32') {
             url += 'Win';
@@ -106,15 +109,30 @@ module.exports = {
      * return revision number of Chromium.
      */
     async getTargetRevisionNumber(version) {
-        // TODO move to config file.
-        const platform = process.platform;
-        if (version == 76 && platform === 'linux') {
-            return '665006';
-        } else if (version == 76 && platform === 'darwin') {
-            return '665002';
-        } else {
-            throw new Error('Unsupported platform, or version.');
+        if (version < 76 || version > 78) {
+            throw new Error('Unsupported chromium version.');
         }
+
+        const platform = process.platform;
+        if (platform === 'linux') {
+            if (process.arch === 'x64') {
+                const cfg = versions.linux64['v'+ version];
+                return cfg.revision;
+            }
+        } else if (platform === 'win32') {
+            if (process.arch === 'x64') {
+                const cfg = versions.win64['v'+ version];
+                return cfg.revision;
+            } else {
+                const cfg = versions.win32['v'+ version];
+                return cfg.revision;
+            }
+        } else if (platform === 'darwin') {
+            const cfg = versions.mac['v'+ version];
+            return cfg.revision;
+        }
+
+        throw new Error('Unsupported platform.');
     },
 
     /**

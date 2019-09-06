@@ -1,6 +1,9 @@
 {
   "name": "@taku-o/chromium",
-  "version": "3.0.0",
+  "version": "3.0.1",
+  "versions": {
+      "chromium": "76"
+  },
   "description": "Fork of dtolstyi/node-chromium, install selected version of Chromium.",
   "repository": {
     "type": "git",

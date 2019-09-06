@@ -106,10 +106,6 @@ module.exports = {
      * return revision number of Chromium.
      */
     async getTargetRevisionNumber(version) {
-        if (!version) {
-            throw new Error('CHROMIUM_VERSION enviornment variable is required. use \n CHROMIUM_VERSION=76 npm install --save @taku-o/chromium');
-        }
-
         // TODO move to config file.
         const platform = process.platform;
         if (version == 76 && platform === 'linux') {
@@ -117,7 +113,7 @@ module.exports = {
         } else if (version == 76 && platform === 'darwin') {
             return '665002';
         } else {
-            throw new Error('Unsupported platform.');
+            throw new Error('Unsupported platform, or version.');
         }
     },
 

@@ -1,6 +1,6 @@
 {
   "name": "@taku-o/chromium",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "versions": {
       "chromium": "76"
   },
@@ -8,6 +8,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/taku-o/node-chromium.git"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
   },
   "main": "index.js",
   "os": [

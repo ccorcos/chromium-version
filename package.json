@@ -1,13 +1,10 @@
 {
   "name": "chromium-version",
   "version": "80.0.0",
-  "description": "Fork of dtolstyi/node-chromium, install selected version of Chromium.",
+  "description": "Install selected version of Chromium.",
   "repository": {
     "type": "git",
     "url": "git://github.com/ccorcos/node-chromium.git"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "main": "index.js",
   "os": [

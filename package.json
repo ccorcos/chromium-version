@@ -1,6 +1,6 @@
 {
   "name": "chromium-version",
-  "version": "77",
+  "version": "77.0.0",
   "description": "Fork of dtolstyi/node-chromium, install selected version of Chromium.",
   "repository": {
     "type": "git",

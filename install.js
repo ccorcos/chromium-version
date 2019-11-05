@@ -9,8 +9,6 @@ const debug = require('debug')('node-chromium');
 const config = require('./config');
 const utils = require('./utils');
 
-const DEFAULT_CHROMIUM_VERSION = require('./package.json').versions.chromium;
-
 function createTempFile() {
     return new Promise((resolve, reject) => {
         tmp.file((error, path) => {
@@ -71,10 +69,7 @@ async function install() {
     try {
         //console.info('Step 1. Retrieving Chromium latest revision number');
         //const revision = await utils.getLatestRevisionNumber();
-        let version = DEFAULT_CHROMIUM_VERSION;
-        if (process.env.CHROMIUM_VERSION) {
-            version = process.env.CHROMIUM_VERSION;
-        }
+        let version = 77;
 
         console.info('Step 1. Retrieving target version of Chromium. version:'+ version);
         const revision = await utils.getTargetRevisionNumber(version);

@@ -4,26 +4,22 @@
 **node-chromium** allows you to easily add [Chromium](https://www.chromium.org/) binaries to your project and use it for automation, testing, web scraping or just for fun.
 
 ## Why Chromium?
-[Chromium](https://www.chromium.org/) is an open-source web browser developed and maintained by The Chromium Project. Google Chrome, also released in 2008, is a proprietary web browser developed and maintained by Google. The reason why Chrome and Chromium are tied to each other is that Chome borrows Chromium’s source code.  
-The main benefit of using Chromium is that it **doesn't** include all the proprietary modifications made by Google, thus it's more lightweight and more suitable for automation purposes.  
+[Chromium](https://www.chromium.org/) is an open-source web browser developed and maintained by The Chromium Project. Google Chrome, also released in 2008, is a proprietary web browser developed and maintained by Google. The reason why Chrome and Chromium are tied to each other is that Chome borrows Chromium’s source code.
+The main benefit of using Chromium is that it **doesn't** include all the proprietary modifications made by Google, thus it's more lightweight and more suitable for automation purposes.
 You can see full list of differences in [Fossbytes article](https://fossbytes.com/difference-google-chrome-vs-chromium-browser/).
 
 ## Requirements
-`node-chromium 2.x.x` is tested against and supports Node.js 7+  
+`node-chromium 2.x.x` is tested against and supports Node.js 7+
 If you need to use older versions of Node.js try `node-chromium 1.x.x` releases.
 
 ## Usage
 Depending on your needs, you can install module into **devDependencies** (`--save-dev`) or production **dependencies** (`--save`)
 
 ```
-npm install --save @taku-o/chromium
-```
-
-if you want to select installing Chromium version,
-use CHROMIUM_VERSION environment variable.
-
-```
-CHROMIUM_VERSION=76 npm install --save @taku-o/chromium
+npm install --save chromium-version@77
+npm install --save chromium-version@78
+npm install --save chromium-version@79
+npm install --save chromium-version@80
 ```
 
 ```js
@@ -36,14 +32,14 @@ execFile(chromium.path, ['https://google.com'], err => {
 ```
 
 ### Proxy Configuration
-When downloading the chromium binary **node-chromium** will use the proxy configured for `npm` to establish HTTP(S) connections. The proxy used by `npm` can be configured using 
+When downloading the chromium binary **node-chromium** will use the proxy configured for `npm` to establish HTTP(S) connections. The proxy used by `npm` can be configured using
 ```
 npm config set proxy http://<username>:<password>@<the.proxy.hostname>:<port>
 npm config set https-proxy http://<username>:<password>@<the.proxy.hostname>:<port
 npm config set no-proxy localhost,127.0.0.1,example.org
 ```
 
-Additionally proxy settings found in the environment variables `HTTP_PROXY`, `HTTPS_PROXY` and `NO_PROXY` will be used if they are not defined in the `.npmrc` file. 
+Additionally proxy settings found in the environment variables `HTTP_PROXY`, `HTTPS_PROXY` and `NO_PROXY` will be used if they are not defined in the `.npmrc` file.
 
 ## Selenium WebDriver Headless (without UI) tests
 It's extremely easy to use **node-chromium** with **selenium-webdriver** to perform e2e tests without spawning browser UI.
@@ -74,11 +70,11 @@ async function start() {
         .forBrowser('chrome')
         .setChromeOptions(options)
         .build();
-		
+
     await driver.get('http://google.com');
     console.log('Hello Google!');
     await takeScreenshot(driver, 'google-start-page');
-    
+
     await driver.quit();
 }
 
@@ -97,7 +93,7 @@ start();
 | --------------- | ------------------------ | ----------------------------- |
 | 3.0.5           | 76                       | Mac, Linux(x64), Win32, Win64 |
 
-## 
+##
 
 ## License
 MIT

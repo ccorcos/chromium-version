@@ -1,13 +1,10 @@
 {
-  "name": "@taku-o/chromium",
-  "version": "3.0.5",
-  "versions": {
-      "chromium": "76"
-  },
+  "name": "chromium-version",
+  "version": "77",
   "description": "Fork of dtolstyi/node-chromium, install selected version of Chromium.",
   "repository": {
     "type": "git",
-    "url": "git://github.com/taku-o/node-chromium.git"
+    "url": "git://github.com/ccorcos/node-chromium.git"
   },
   "publishConfig": {
     "access": "public"
@@ -35,7 +32,6 @@
     "chrome",
     "browser"
   ],
-  "author": "taku-o <mail@nanasi.jp> (https://nanasi.jp/)",
   "license": "MIT",
   "xo": {
     "space": 4,
